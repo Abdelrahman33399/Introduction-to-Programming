@@ -1,0 +1,616 @@
+/* style.css */
+
+/* استيراد الخط العربي 'Cairo' من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* تعريف متغيرات CSS للألوان والتوهج لتسهيل التعديل المستقبلي */
+:root {
+    --primary-gradient: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* بنفسجي لأزرق - خلفية رئيسية */
+    --secondary-gradient: linear-gradient(to right, #00d2ff 0%, #3a7bd5 100%); /* أزرق فاتح لأزرق غامق - للبنرات والأزرار */
+    --text-color: #e0e0e0; /* لون نص فاتح للوضوح على الخلفية الداكنة */
+    --heading-glow-color: #0ff; /* لون نيون سماوي للتوهج */
+    --link-color: #00ffff; /* لون أزرق نيون للروابط */
+    --background-dark: #1a1a2e; /* خلفية داكنة جداً */
+    --card-background: rgba(40, 40, 60, 0.7); /* خلفية كارد شفافة داكنة */
+    --glow-filter: drop-shadow(0 0 5px var(--heading-glow-color)) drop-shadow(0 0 15px var(--heading-glow-color));
+    --border-glow-color: rgba(0, 255, 255, 0.4); /* لون توهج الإطار */
+}
+
+/* الأنماط العامة للجسم والخطوط */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--primary-gradient); /* تطبيق التدرج الرئيسي */
+    background-attachment: fixed; /* لجعل الخلفية ثابتة أثناء السكرول لتعطي إحساسًا بالعمق */
+    color: var(--text-color);
+    line-height: 1.8; /* لسهولة قراءة النصوص الطويلة */
+    overflow-x: hidden; /* لمنع ظهور شريط التمرير الأفقي غير المرغوب فيه */
+    scroll-behavior: smooth; /* لجعل السكرول سلسًا عند النقر على الروابط الداخلية */
+}
+
+/* تصميم الحاوية لمركزة المحتوى */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles - رأس الصفحة */
+header {
+    background: var(--background-dark);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* ليس fixed, سيتتبع السكرول كما طلبت */
+    position: relative;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    color: #fff;
+    /* تأثير التوهج على العنوان */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+    filter: var(--glow-filter);
+    transition: all 0.3s ease-in-out; /* حركة ناعمة عند التفاعل */
+}
+header h1:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 15px var(--heading-glow-color), 0 0 30px var(--heading-glow-color);
+}
+
+/* Navigation Styles - قائمة التنقل */
+nav {
+    background: rgba(0, 0, 0, 0.6); /* خلفية شبه شفافة */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 90;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* لعرض العناصر بجانب بعضها في الديسكتوب */
+    justify-content: center;
+    flex-wrap: wrap; /* للسماح بالعناصر بالنزول لسطر جديد لو الشاشة صغيرة */
+}
+
+nav ul li {
+    position: relative; /* عشان القائمة المنسدلة */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4); /* توهج خفيف للنصوص */
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 255, 255, 0.15); /* توهج عند المرور */
+    color: var(--link-color);
+    transform: translateY(-3px); /* حركة خفيفة لأعلى */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Dropdown Menu - القائمة المنسدلة */
+nav ul li ul.dropdown {
+    display: none; /* مخفية افتراضيًا */
+    position: absolute;
+    background: var(--background-dark);
+    min-width: 220px;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%); /* توسيط القائمة المنسدلة تحت العنصر الأب */
+    top: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease-out forwards; /* تأثير ظهور ناعم */
+}
+
+nav ul li:hover ul.dropdown {
+    display: block; /* تظهر عند المرور بالماوس */
+}
+
+nav ul li ul.dropdown li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li ul.dropdown li a {
+    padding: 12px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* فاصل بين العناصر */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 0; /* لإزالة الـ border-radius على عناصر القائمة الداخلية */
+}
+
+nav ul li ul.dropdown li:last-child a {
+    border-bottom: none; /* إزالة الفاصل من العنصر الأخير */
+}
+
+nav ul li ul.dropdown li a:hover {
+    background: var(--secondary-gradient); /* تدرج لوني عند التحويم */
+    color: #fff;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Main Content Section - قسم المحتوى الرئيسي */
+.content-section {
+    padding: 40px 0;
+    text-align: right; /* محاذاة النص لليمين للعربية */
+    direction: rtl; /* اتجاه النص من اليمين لليسار */
+}
+
+/* Card Styles - تصميم الكروت */
+.card {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* تأثير حركة عند التحويم */
+    border: 1px solid var(--border-glow-color); /* إطار نيون خفيف */
+    animation: slideInUp 0.6s ease-out forwards; /* تأثير ظهور من الأسفل للأعلى */
+    opacity: 0; /* مخفي في البداية لتظهر بالأنيميشن */
+}
+/* لتشغيل الأنيميشن لكل كارد بتأخير بسيط */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+/* ... وهكذا حسب عدد الكروت في الصفحة */
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01); /* حركة لأعلى وتكبير بسيط */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 255, 255, 0.5); /* إطار أكثر توهجًا عند التحويم */
+}
+
+.card h2, .card h3 {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 8px var(--heading-glow-color); /* توهج للعناوين */
+    filter: var(--glow-filter);
+    transition: all 0.3s ease;
+}
+.card h2:hover, .card h3:hover {
+    text-shadow: 0 0 12px var(--heading-glow-color), 0 0 25px var(--heading-glow-color);
+}
+
+.card p, .card ul, .card ol {
+    font-size: 1.15em;
+    color: var(--text-color);
+    line-height: 1.9;
+    margin-bottom: 1em;
+}
+.card ul, .card ol {
+    list-style-position: inside; /* لجعل علامات القائمة داخلية */
+    padding-right: 20px; /* مسافة للعلامات */
+}
+.card li {
+    margin-bottom: 0.5em;
+}
+
+/* Download Button Styles */
+.download-btn {
+    display: inline-block;
+    background: var(--secondary-gradient);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    filter: var(--glow-filter); /* توهج للزر */
+}
+
+.download-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+    background: linear-gradient(to right, #3a7bd5 0%, #00d2ff 100%); /* عكس التدرج عند التحويم */
+}
+
+/* Footer Styles - تذييل الصفحة */
+footer {
+    background: var(--background-dark);
+    padding: 25px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations - تعريف الحركات */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - التجاوبية مع الشاشات المختلفة */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column; /* العناصر تكون فوق بعض في الشاشات الصغيرة */
+        align-items: center; /* توسيط العناصر */
+    }
+
+    nav ul li {
+        margin: 8px 0; /* مسافة بين عناصر القائمة */
+    }
+
+    /* إخفاء القائمة المنسدلة في وضع الموبايل واعتماد قائمة الهمبرغر (التي سنتعامل معها بالجافاسكريبت لاحقًا إذا لزم الأمر) */
+    /* حاليًا، ستظل القائمة المنسدلة تظهر بشكل عمودي تحت العنصر الرئيسي في الموبايل */
+    nav ul li ul.dropdown {
+        position: static; /* عشان متخرجش برا الـ flow */
+        display: block; /* عشان تظهر لما القائمة الرئيسية تظهر */
+        background: none; /* عشان ميكونش ليها خلفية منفصلة */
+        min-width: unset;
+        box-shadow: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05); /* فاصل خفيف */
+    }
+    nav ul li ul.dropdown li a {
+        padding: 10px 15px;
+        border-bottom: none; /* عشان ميكنش فيه حدود كتير في الموبايل */
+    }
+
+    .card {
+        padding: 25px;
+    }
+    .card h2, .card h3 {
+        font-size: 1.8em;
+    }
+    .card p, .card ul, .card ol {
+        font-size: 1em;
+    }
+    .download-btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .container {
+        padding: 15px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card h2, .card h3 {
+        font-size: 1.5em;
+    }
+    .card p, .card ul, .card ol {
+        font-size: 0.95em;
+    }
+}
+
+/* Styles for Comparison Tables/Cards (specific for comparisons.html) */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.comparison-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glow-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    animation: slideInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+.comparison-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 255, 255, 0.7);
+}
+
+.comparison-card h3 {
+    font-size: 1.8em;
+    color: #fff;
+    text-shadow: 0 0 6px var(--heading-glow-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
+    font-size: 1em;
+}
+
+.comparison-table th {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--link-color);
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
+}
+
+.comparison-table td {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+.comparison-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.03); /* لون مختلف للصفوف الزوجية */
+}
+
+/* Styles for FAQ Section (faq.html) */
+.quiz-section {
+    padding: 40px 0;
+    text-align: center;
+    direction: rtl;
+}
+
+.quiz-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glow-color);
+    display: none; /* مخفية افتراضيًا وتظهر بالجافاسكريبت */
+    animation: fadeIn 0.5s ease-out forwards;
+    text-align: right;
+}
+.quiz-card.active {
+    display: block;
+}
+
+.quiz-question {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 7px var(--heading-glow-color);
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+.quiz-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quiz-options li {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: right;
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+.quiz-options li:hover {
+    background: rgba(0, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+}
+
+.quiz-options li.correct {
+    background: linear-gradient(to right, #4CAF50, #8bc34a); /* أخضر للتصحيح */
+    color: #fff;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    animation: pulseGlow 0.8s infinite alternate;
+}
+
+.quiz-options li.incorrect {
+    background: linear-gradient(to right, #f44336, #e57373); /* أحمر للخطأ */
+    color: #fff;
+    border-color: #f44336;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.6);
+    animation: shake 0.5s;
+}
+
+.feedback-message {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    min-height: 25px; /* للحفاظ على ارتفاع ثابت ومنع اهتزاز الصفحة */
+}
+
+.explanation-text {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid var(--link-color);
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: right;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: 15px;
+    margin-top: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--secondary-gradient);
+    border-radius: 10px;
+    transition: width 0.4s ease-out;
+    box-shadow: 0 0 8px var(--link-color);
+}
+
+.quiz-navigation-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quiz-navigation-buttons button {
+    background: var(--secondary-gradient);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-navigation-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
+}
+.quiz-navigation-buttons button:disabled {
+    background: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.quiz-results {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glow-color);
+    text-align: center;
+    display: none; /* مخفي افتراضيًا */
+}
+
+.quiz-results h2 {
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 0 0 10px var(--heading-glow-color);
+    margin-bottom: 20px;
+}
+
+.quiz-results p {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.quiz-results .review-answers {
+    max-height: 400px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    text-align: right;
+}
+
+.quiz-results .review-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.quiz-results .review-item:last-child {
+    border-bottom: none;
+}
+
+.quiz-results .review-question {
+    font-weight: bold;
+    color: var(--link-color);
+    font-size: 1.15em;
+    margin-bottom: 8px;
+}
+
+.quiz-results .review-user-answer,
+.quiz-results .review-correct-answer {
+    font-size: 1em;
+    margin-bottom: 5px;
+    padding-right: 15px;
+}
+
+.quiz-results .review-user-answer {
+    color: #ffd700; /* ذهبي لإجابة المستخدم */
+}
+
+.quiz-results .review-correct-answer {
+    color: #4CAF50; /* أخضر للإجابة الصحيحة */
+}
+
+.quiz-results .review-explanation {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border-right: 3px solid #4CAF50;
+}
+
+/* Animations for Quiz */
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 10px rgba(76, 175, 80, 0.6); }
+    to { box-shadow: 0 0 20px rgba(76, 175, 80, 0.9); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}

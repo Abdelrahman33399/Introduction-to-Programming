@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبر معلوماتك - مقدمة في البرمجة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/00FFFF/code.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>مقدمة في البرمجة</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="theoretical-aspect.html">الجانب النظري</a></li>
+                <li><a href="practical-aspect.html">الجانب العملي</a></li>
+                <li><a href="#" class="dropdown-toggle">المقارنات</a>
+                    <ul class="dropdown">
+                        <li><a href="comparisons.html#vb-data-types">أنواع البيانات في VB</a></li>
+                        <li><a href="comparisons.html#dart-data-types">أنواع البيانات في Dart</a></li>
+                        <li><a href="comparisons.html#variables-constants">المتغيرات والثوابت</a></li>
+                        <li><a href="comparisons.html#operators">المشغلات (العوامل)</a></li>
+                        <li><a href="comparisons.html#flowcharts-elements">عناصر خرائط التدفق</a></li>
+                        <li><a href="comparisons.html#control-properties">خصائص أدوات التحكم</a></li>
+                        <li><a href="comparisons.html#form-properties">خصائص النموذج</a></li>
+                    </ul>
+                </li>
+                <li><a href="challenges.html">المشكلات والتحديات</a></li>
+                <li><a href="faq.html">اختبر معلوماتك (الأسئلة)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section quiz-section">
+        <div class="container">
+            <div class="card">
+                <h2>اختبر معلوماتك في البرمجة</h2>
+                <p>أجب عن الأسئلة التالية لاختبار فهمك للمفاهيم الأساسية في البرمجة.</p>
+                <button class="download-btn" id="startQuizBtn">ابدأ الاختبار</button>
+            </div>
+
+            <div id="quiz-container" style="display: none;">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div id="question-card" class="quiz-card">
+                    <p class="quiz-question" id="currentQuestion"></p>
+                    <ul class="quiz-options" id="quizOptions">
+                        </ul>
+                    <div class="feedback-message" id="feedbackMessage"></div>
+                    <div class="explanation-text" id="explanationText" style="display:none;"></div>
+                </div>
+
+                <div class="quiz-navigation-buttons">
+                    <button id="nextQuestionBtn" disabled>السؤال التالي</button>
+                </div>
+            </div>
+
+            <div id="quiz-results" class="quiz-results" style="display: none;">
+                <h2>نتائج الاختبار</h2>
+                <p>لقد أجبت على <span id="scoreDisplay"></span> سؤالًا صحيحًا من أصل <span id="totalQuestionsDisplay"></span> سؤال.</p>
+                <div class="review-answers" id="reviewAnswers">
+                    <h3>مراجعة الإجابات:</h3>
+                    </div>
+                <button class="download-btn" id="retakeQuizBtn" style="margin-top: 20px;">إعادة الاختبار</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 مقدمة في البرمجة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

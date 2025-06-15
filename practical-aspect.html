@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجانب العملي - مقدمة في البرمجة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/00FFFF/code.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>مقدمة في البرمجة</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="theoretical-aspect.html">الجانب النظري</a></li>
+                <li><a href="practical-aspect.html">الجانب العملي</a></li>
+                <li><a href="#" class="dropdown-toggle">المقارنات</a>
+                    <ul class="dropdown">
+                        <li><a href="comparisons.html#vb-data-types">أنواع البيانات في VB</a></li>
+                        <li><a href="comparisons.html#dart-data-types">أنواع البيانات في Dart</a></li>
+                        <li><a href="comparisons.html#variables-constants">المتغيرات والثوابت</a></li>
+                        <li><a href="comparisons.html#operators">المشغلات (العوامل)</a></li>
+                        <li><a href="comparisons.html#flowcharts-elements">عناصر خرائط التدفق</a></li>
+                        <li><a href="comparisons.html#control-properties">خصائص أدوات التحكم</a></li>
+                        <li><a href="comparisons.html#form-properties">خصائص النموذج</a></li>
+                    </ul>
+                </li>
+                <li><a href="challenges.html">المشكلات والتحديات</a></li>
+                <li><a href="faq.html">اختبر معلوماتك (الأسئلة)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <div class="container">
+            <div class="card">
+                <h2>الجانب العملي في البرمجة</h2>
+                <p>في هذا القسم، سنستعرض بعض المفاهيم الأساسية للبرمجة من منظور عملي، وكيفية تطبيقها في بيئات البرمجة المختلفة.</p>
+            </div>
+
+            <div class="card">
+                <h3>جمع الأرقام من 1 لعدد معين</h3>
+                <p>من الأمثلة الأساسية في البرمجة التي تساعد على فهم مفهوم الحلقات التكرارية هي عملية جمع الأرقام من 1 حتى عدد معين.</p>
+                <p>على سبيل المثال، لجمع الأرقام من 1 إلى 5: $1 + 2 + 3 + 4 + 5 = 15$.</p>
+                <p>يمكن تحقيق ذلك باستخدام حلقة تكرارية (مثل For Loop أو While Loop) تبدأ من 1 وتستمر حتى العدد المحدد، وفي كل تكرار يتم إضافة الرقم الحالي إلى مجموع كلي.</p>
+            </div>
+
+            <div class="card">
+                <h2>أنواع البيانات في لغة البرمجة</h2>
+                <p>فهم أنواع البيانات أمر حيوي في البرمجة، حيث يحدد نوع القيمة التي يمكن للمتغير تخزينها والعمليات التي يمكن إجراؤها عليها.</p>
+
+                <h3>أنواع البيانات في الفيجوال بيزك:</h3>
+                <p>يمكن تصنيف البيانات في الفيجوال بيسك إلى:</p>
+                <ol>
+                    <li>**النصوص (String):** تستخدم لتخزين البيانات النصية (أحرف، كلمات، جمل).</li>
+                    <li>**الأعداد الصحيحة (Integer):** تستخدم لتخزين الأعداد الكاملة التي لا تحتوي على كسور عشرية.</li>
+                    <li>**الأعداد العشرية (Double):** تستخدم لتخزين الأعداد التي تحتوي على كسور عشرية (أرقام حقيقية).</li>
+                    <li>**التاريخ (Date):** تستخدم لتخزين قيم التاريخ والوقت.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h2>المتغيرات والثوابت:</h2>
+                <p>المتغيرات والثوابت هي أدوات في البرمجة تساعد في تخزين البيانات في الذاكرة. باستخدام المتغيرات والثوابت، يمكننا حفظ المعلومات واسترجاعها من الذاكرة.</p>
+
+                <h3>ملاحظات حول المتغيرات:</h3>
+                <ul>
+                    <li>المتغيرات هي أماكن في الذاكرة يتم تخزين البيانات فيها.</li>
+                    <li>عند تغيير قيمة المتغير، يتم استبدال القيمة القديمة بالقيمة الجديدة.</li>
+                    <li>يمكن إنشاء ثوابت بدلاً من المتغيرات باستخدام الكلمة المفتاحية `Const`.</li>
+                </ul>
+
+                <h3>وظيفتها:</h3>
+                <p>تخزين البيانات في الذاكرة المؤقتة (RAM).</p>
+
+                <h3>الفرق بينها وبين قواعد البيانات:</h3>
+                <ul>
+                    <li>قواعد البيانات تخزن المعلومات بشكل دائم في ملفات خارجية، بينما المتغيرات تخزن البيانات مؤقتًا في الذاكرة.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>المفاهيم الأساسية:</h2>
+                <p>تُعد هذه المفاهيم اللبنات الأساسية لأي برنامج:</p>
+                <ul>
+                    <li>أنواع البيانات</li>
+                    <li>الدوال (Functions)</li>
+                    <li>المتغيرات والثوابت</li>
+                    <li>المشغلات (العوامل)</li>
+                    <li>الجمل الشرطية (Conditional Statements)</li>
+                    <li>الحلقات التكرارية (Loops)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>أنواع البيانات (تصنيف إضافي):</h2>
+                <p>تم تصنيفها إلى نوعين:</p>
+                <ul>
+                    <li>**الأنواع الأساسية (Primitive Types):**
+                        <ul>
+                            <li>الأرقام (Number)</li>
+                            <li>النصوص (String)</li>
+                            <li>المنطقية (Boolean)</li>
+                            <li>القيمة الفارغة (Null)</li>
+                            <li>القيمة غير المعرفة (Undefined)</li>
+                        </ul>
+                    </li>
+                    <li>**الأنواع المعقدة (Complex Types):**
+                        <ul>
+                            <li>القوائم (List)</li>
+                            <li>الخرائط (Map)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>المشغلات (العوامل):</h2>
+                <p>تقوم بعمليات مثل الجمع وغيره على البيانات التي تم تخزينها في الذاكرة عن طريق المعالج (Processor).</p>
+                <h3>وظيفتها:</h3>
+                <p>تنفيذ عمليات عن طريق المعالج.</p>
+                <h3>تصنيفات المشغلات:</h3>
+                <ol>
+                    <li>**المشغلات الحسابية:**
+                        <ul>
+                            <li>الجمع (+)</li>
+                            <li>الطرح (-)</li>
+                            <li>الضرب (*)</li>
+                            <li>القسمة (/)</li>
+                            <li>الزيادة (++) ازود 1</li>
+                            <li>النقصان (--) انقص 1</li>
+                        </ul>
+                    </li>
+                    <li>**مشغلات النصوص:**
+                        <ul>
+                            <li>دمج النصوص باستخدام (+). كذا علامة (+) لها وظيفتين: جمع الأرقام ودمج النصوص.</li>
+                            <li>**ملاحظة:** إذا تم جمع نص مع رقم، سيظهر خطأ (Error).</li>
+                        </ul>
+                    </li>
+                    <li>**مشغلات التعيين:**
+                        <ul>
+                            <li>مثل `X = 5`، حيث يتم تعيين القيمة 5 للمتغير X.</li>
+                        </ul>
+                    </li>
+                    <li>**مشغلات المقارنة:**
+                        <ul>
+                            <li>أكبر من (`>`), أصغر من (`<`), أكبر من أو يساوي (`>=`), أصغر من أو يساوي (`<=`).</li>
+                            <li>وناتج أي عملية مقارنة يجب أن يكون `true` أو `false`.</li>
+                            <li>مثل `X == 5`، حيث يتم التحقق مما إذا كانت قيمة X تساوي 5.</li>
+                            <li>الناتج يكون `true` أو `false`. ولو لا تساوي اكتبها هكذا `X != 5`.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h2>الخوارزميات (Algorithms):</h2>
+                <h3>1. تعريف الخوارزمية:</h3>
+                <ul>
+                    <li>هي مجموعة من الخطوات المنهجية المُصممة لحل مشكلة معينة بشكل فعّال.</li>
+                    <li>سلسلة من الخطوات الواضحة والمتسلسلة التي يجب اتباعها للوصول إلى الحل المطلوب.</li>
+                </ul>
+                <h3>2. خصائص الخوارزمية الجيدة:</h3>
+                <ol>
+                    <li>**وضوح التعليمات:**
+                        <ul>
+                            <li>يجب أن تكون كل خطوة محددة وسهلة الفهم وقابلة للتنفيذ.</li>
+                        </ul>
+                    </li>
+                    <li>**الفعالية:**
+                        <ul>
+                            <li>يجب أن تحل المشكلة بدقة وبأقل تعقيد ممكن.</li>
+                        </ul>
+                    </li>
+                    <li>**نتائج متسقة:**
+                        <ul>
+                            <li>نفس المدخلات $\rightarrow$ نفس المخرجات دائمًا (مثال: خوارزمية جمع الأرقام دائمًا تعطي نفس الناتج لنفس الأرقام).</li>
+                        </ul>
+                    </li>
+                    <li>**عدد منتهٍ من الخطوات:**
+                        <ul>
+                            <li>يجب أن تنتهي الخوارزمية بعد عدد محدود من الخطوات (لا تدخل في حلقات لا نهائية).</li>
+                        </ul>
+                    </li>
+                    <li>**المدخلات والمخرجات:**
+                        <ul>
+                            <li>قد يكون لها مدخلات (Inputs) أو لا، لكن يجب أن يكون لها مخرجات (Outputs).</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3>3. تمثيل الخوارزميات:</h3>
+                <p>يُمكن تمثيل الحلول البرمجية بطريقتين رئيسيتين:</p>
+                <ol>
+                    <li>**التمثيل النصي (Pseudocode):**
+                        <ul>
+                            <li>وصف شبه برمجي غير رسمي، يشبه اللغة البشرية مع بعض القواعد المشابهة للبرمجة.</li>
+                            <li>**مثال:**
+                                <pre><code>age = 20
+if age > 18 :
+    print("Adult")
+else :
+    print("Minor")</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>**خرائط التدفق (Flowcharts):**
+                        <ul>
+                            <li>تمثيل رسومي باستخدام رموز هندسية موحدة مثل:
+                                <ul>
+                                    <li>المستطيل: عملية معالجة (مثل حساب مجموع عددين).</li>
+                                    <li>المعين: قرار شرطي (نعم/لا).</li>
+                                    <li>المتوازي الأضلاع: إدخال/إخراج بيانات.</li>
+                                    <li>السهام: اتجاه تنفيذ الخطوات.</li>
+                                </ul>
+                            </li>
+                            <li>**مثال (لمخطط التدفق):** (لا يمكن تمثيل رسم هنا، ولكن الكود الذي يصف العملية هو:)
+                                <pre><code>age = int(input("Enter your age: "))
+if age > 18 :
+    print("Adult")
+else :
+    print("Minor")</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h2>الجمل الشرطية (Conditional Statements):</h2>
+                <h3>أ. If Condition:</h3>
+                <ul>
+                    <li>**وصف:** تستخدم لتنفيذ أمر معين إذا كان الشرط صحيحًا (True).</li>
+                    <li>**تركيبة:**
+                        <pre><code>If Condition Then
+    ' Code to be executed if Condition is True
+End If</code></pre>
+                    </li>
+                    <li>**ملاحظة:** إذا كان الشرط False، فلن يتم تنفيذ الكود الموجود داخل If.</li>
+                </ul>
+
+                <h3>ب. else if:</h3>
+                <ul>
+                    <li>**وصف:** تستخدم عندما يكون هناك احتمالان فقط (True أو False).</li>
+                    <li>**تركيبة:**
+                        <pre><code>If Condition Then
+    ' Code for True
+else
+    ' Code for False
+End If</code></pre>
+                    </li>
+                </ul>
+
+                <h3>ج. Else If:</h3>
+                <ul>
+                    <li>**وصف:** تستخدم عندما يكون هناك أكثر من شرط.</li>
+                    <li>**تركيبة:**
+                        <pre><code>If Condition1 Then
+    ' Code for Condition1 is True
+ElseIf Condition2 Then
+    ' Code for Condition2 is True
+Else
+    ' Code if no condition is True
+End If</code></pre>
+                    </li>
+                    <li>**ملاحظة:** يتم تنفيذ أول شرط صحيح (True) فقط، ولا يتم التحقق من الشروط الأخرى بعد ذلك.</li>
+                </ul>
+
+                <h3>د. Switch Case:</h3>
+                <ul>
+                    <li>**وصف:** تستخدم عندما يكون للمتغير حالات محددة ومعروفة مسبقًا.</li>
+                    <li>**تركيبة:**
+                        <pre><code>Select Case Variable
+    Case Value1
+        ' Code for Value1
+    Case Value2
+        ' Code for Value2
+    Case Else
+        ' Code if no match
+End Select</code></pre>
+                    </li>
+                    <li>**مثال:**
+                        <pre><code>Select Case DayOfWeek
+    Case "Monday"
+        MsgBox("It's Monday!")
+    Case "Tuesday"
+        MsgBox("It's Tuesday!")
+    Case Else
+        MsgBox("It's another day.")
+End Select</code></pre>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>الحلقات التكرارية (Loops):</h2>
+                <p>إعطاء الأمر مرة واحدة وتكراره تلقائيًا.</p>
+
+                <h3>أ. For Loop:</h3>
+                <ul>
+                    <li>**وصف:** تستخدم لتكرار تنفيذ أمر معين لعدد محدد من المرات.</li>
+                    <li>**تركيبة:**
+                        <pre><code>For Counter = Start To End [Step StepValue]
+    ' Code to be repeated
+Next Counter</code></pre>
+                    </li>
+                    <li>**مثال:**
+                        <pre><code>For i = 1 To 10
+    Console.WriteLine(i)
+Next i</code></pre>
+                    </li>
+                    <li>**النتيجة:** سيتم طباعة الأرقام من 1 إلى 10.</li>
+                </ul>
+
+                <h3>ب. While Loop:</h3>
+                <ul>
+                    <li>**وصف:** تستخدم لتكرار تنفيذ أمر معين طالما أن الشرط صحيح (True).</li>
+                    <li>**تركيبة:**
+                        <pre><code>While Condition
+    ' Code to be repeated
+End While</code></pre>
+                    </li>
+                    <li>**مثال:**
+                        <pre><code>Dim i As Integer = 1
+While i <= 10
+    Console.WriteLine(i)
+    i = i + 1
+End While</code></pre>
+                    </li>
+                    <li>**النتيجة:** سيتم طباعة الأرقام من 1 إلى 10.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>الدوال (Functions):</h2>
+                <p>تعبر عن وظائف متكررة داخل البرنامج.</p>
+
+                <h3>أ. دالة بدون قيمة إرجاع (Void Function):</h3>
+                <ul>
+                    <li>**وصف:** دالة تنفذ أمرًا معينًا ولكنها لا ترجع أي قيمة.</li>
+                    <li>**تركيبة:**
+                        <pre><code>Sub FunctionName(Parameters)
+    ' Code to be executed
+End Sub</code></pre>
+                    </li>
+                    <li>**مثال:**
+                        <pre><code>Sub GreetUser(name As String)
+    MsgBox("Hello, " & name & "!")
+End Sub</code></pre>
+                    </li>
+                </ul>
+
+                <h3>ب. دالة بقيمة إرجاع (Returning Value Function):</h3>
+                <ul>
+                    <li>**وصف:** دالة تنفذ أمرًا معينًا وترجع قيمة محددة.</li>
+                    <li>**تركيبة:**
+                        <pre><code>Function FunctionName(Parameters) As DataType
+    ' Code to be executed
+    Return Value
+End Function</code></pre>
+                    </li>
+                    <li>**مثال:**
+                        <pre><code>Function AddNumbers(num1 As Integer, num2 As Integer) As Integer
+    Return num1 + num2
+End Function</code></pre>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>ملخص:</h2>
+                <ul>
+                    <li>**الجمل الشرطية:** تستخدم لاتخاذ قرارات بناءً على شروط محددة.</li>
+                    <li>**الحلقات التكرارية:** تستخدم لتكرار تنفيذ الأوامر.</li>
+                    <li>**الدوال:** تستخدم لتنظيم الكود وإعادة استخدامه.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>مصادر إضافية لتعلم Dart:</h2>
+                <p>يمكنك استكشاف المزيد حول لغة Dart من خلال هذه المصادر التعليمية:</p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://www.m3aarf.com/certificate/8514/Dart-%D9%85%D9%86-%D8%A7%D9%84%D8%B5%D9%81%D8%B1-video?utm_source=chatgpt.com" class="download-btn" target="_blank" style="margin-left: 15px; margin-right: 15px;">Dart من الصفر (فيديو)</a>
+                    <a href="https://arabflutter.com/dart/" class="download-btn" target="_blank" style="margin-left: 15px; margin-right: 15px;">Dart في عرب فلاتر</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 مقدمة في البرمجة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+</body>
+</html>

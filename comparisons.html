@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المقارنات - مقدمة في البرمجة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/00FFFF/code.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>مقدمة في البرمجة</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="theoretical-aspect.html">الجانب النظري</a></li>
+                <li><a href="practical-aspect.html">الجانب العملي</a></li>
+                <li><a href="#" class="dropdown-toggle">المقارنات</a>
+                    <ul class="dropdown">
+                        <li><a href="comparisons.html#vb-data-types">أنواع البيانات في VB</a></li>
+                        <li><a href="comparisons.html#dart-data-types">أنواع البيانات في Dart</a></li>
+                        <li><a href="comparisons.html#variables-constants">المتغيرات والثوابت</a></li>
+                        <li><a href="comparisons.html#operators">المشغلات (العوامل)</a></li>
+                        <li><a href="comparisons.html#flowcharts-elements">عناصر خرائط التدفق</a></li>
+                        <li><a href="comparisons.html#control-properties">خصائص أدوات التحكم</a></li>
+                        <li><a href="comparisons.html#form-properties">خصائص النموذج</a></li>
+                    </ul>
+                </li>
+                <li><a href="challenges.html">المشكلات والتحديات</a></li>
+                <li><a href="faq.html">اختبر معلوماتك (الأسئلة)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <div class="container">
+            <div class="card">
+                <h2>المقارنات بين مفاهيم البرمجة</h2>
+                <p>في هذا القسم، نستعرض مقارنات توضيحية بين المفاهيم البرمجية المختلفة، مما يساعد على ترسيخ الفهم وتوضيح الفروقات الدقيقة.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card" id="vb-data-types">
+                    <h3>أنواع البيانات في VB.NET</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>النوع</th>
+                                <th>الوصف</th>
+                                <th>مثال</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Integer</td>
+                                <td>أعداد صحيحة بدون كسور عشرية</td>
+                                <td>`Dim x As Integer = 10`</td>
+                            </tr>
+                            <tr>
+                                <td>Double</td>
+                                <td>أعداد عشرية (حقيقية)</td>
+                                <td>`Dim price As Double = 19.99`</td>
+                            </tr>
+                            <tr>
+                                <td>String</td>
+                                <td>نصوص أو سلاسل من الأحرف</td>
+                                <td>`Dim name As String = "Ahmed"`</td>
+                            </tr>
+                            <tr>
+                                <td>Boolean</td>
+                                <td>قيمة منطقية (True أو False)</td>
+                                <td>`Dim isActive As Boolean = True`</td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td>تاريخ ووقت</td>
+                                <td>`Dim today As Date = #1/1/2024#`</td>
+                            </tr>
+                            <tr>
+                                <td>Char</td>
+                                <td>حرف واحد</td>
+                                <td>`Dim initial As Char = "A"c`</td>
+                            </tr>
+                            <tr>
+                                <td>Decimal</td>
+                                <td>أعداد عشرية بدقة عالية (للمعاملات المالية)</td>
+                                <td>`Dim amount As Decimal = 123.45D`</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="comparison-card" id="dart-data-types">
+                    <h3>أنواع البيانات في Dart</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>النوع</th>
+                                <th>الوصف</th>
+                                <th>مثال</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>int</td>
+                                <td>أعداد صحيحة</td>
+                                <td>`int x = 10;`</td>
+                            </tr>
+                            <tr>
+                                <td>double</td>
+                                <td>أعداد عشرية</td>
+                                <td>`double price = 19.99;`</td>
+                            </tr>
+                            <tr>
+                                <td>String</td>
+                                <td>نصوص أو سلاسل من الأحرف</td>
+                                <td>`String name = "Mohamed";`</td>
+                            </tr>
+                            <tr>
+                                <td>bool</td>
+                                <td>قيمة منطقية (true أو false)</td>
+                                <td>`bool isActive = true;`</td>
+                            </tr>
+                            <tr>
+                                <td>List</td>
+                                <td>مجموعة مرتبة من العناصر (مصفوفة ديناميكية)</td>
+                                <td>`List<String> names = ['Ali', 'Sara'];`</td>
+                            </tr>
+                            <tr>
+                                <td>Map</td>
+                                <td>مجموعة من أزواج المفتاح-القيمة (مثل القاموس)</td>
+                                <td>`Map<String, dynamic> user = {'name': 'Ahmed', 'age': 30};`</td>
+                            </tr>
+                            <tr>
+                                <td>dynamic</td>
+                                <td>يمكن أن يحتوي على أي نوع من البيانات (يتغير نوعه أثناء التشغيل)</td>
+                                <td>`dynamic value = 10; value = "Hello";`</td>
+                            </tr>
+                            <tr>
+                                <td>num</td>
+                                <td>نوع يمثل int أو double (أصل لكليهما)</td>
+                                <td>`num number = 5; number = 5.5;`</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="comparison-card" id="variables-constants">
+                    <h3>المتغيرات والثوابت</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>الميزة</th>
+                                <th>المتغيرات (Variables)</th>
+                                <th>الثوابت (Constants)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>التعريف</td>
+                                <td>مكان في الذاكرة تتغير قيمته أثناء تنفيذ البرنامج.</td>
+                                <td>مكان في الذاكرة تبقى قيمته ثابتة ولا تتغير أثناء تنفيذ البرنامج.</td>
+                            </tr>
+                            <tr>
+                                <td>كلمة مفتاحية (VB.NET)</td>
+                                <td>`Dim`</td>
+                                <td>`Const`</td>
+                            </tr>
+                            <tr>
+                                <td>كلمة مفتاحية (Dart)</td>
+                                <td>`var`, `final`, `dynamic`</td>
+                                <td>`const`, `final`</td>
+                            </tr>
+                            <tr>
+                                <td>أمثلة</td>
+                                <td>`Dim age As Integer = 20` <br> `age = 21`</td>
+                                <td>`Const PI As Double = 3.14` <br> (لا يمكن تغييرها)</td>
+                            </tr>
+                            <tr>
+                                <td>التخزين</td>
+                                <td>في الذاكرة المؤقتة (RAM)</td>
+                                <td>تخزن قيمًا ثابتة، غالبًا ما تُحدد وقت الترجمة.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="comparison-card" id="operators">
+                    <h3>المشغلات (العوامل)</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>النوع</th>
+                                <th>الوصف</th>
+                                <th>مثال (VB.NET)</th>
+                                <th>مثال (Dart)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>حسابية</td>
+                                <td>جمع، طرح، ضرب، قسمة، باقي القسمة، أس</td>
+                                <td>`+`, `-`, `*`, `/`, `Mod`, `^`</td>
+                                <td>`+`, `-`, `*`, `/`, `%`, `**` (أو `pow()` function)</td>
+                            </tr>
+                            <tr>
+                                <td>زيادة/نقصان</td>
+                                <td>زيادة/نقصان القيمة بمقدار 1</td>
+                                <td>`X = X + 1` (أو `X += 1`)</td>
+                                <td>`++X`, `X--` (أو `X += 1`)</td>
+                            </tr>
+                            <tr>
+                                <td>نصية (دمج)</td>
+                                <td>دمج (ربط) النصوص</td>
+                                <td>`&`, `+`</td>
+                                <td>`+`</td>
+                            </tr>
+                            <tr>
+                                <td>تعيين</td>
+                                <td>إسناد قيمة لمتغير</td>
+                                <td>`=`</td>
+                                <td>`=`</td>
+                            </tr>
+                            <tr>
+                                <td>مقارنة</td>
+                                <td>المقارنة بين القيم (أكبر، أصغر، يساوي، لا يساوي)</td>
+                                <td>`>`, `<`, `>=`, `<=`, `=`, `<>`</td>
+                                <td>`>`, `<`, `>=`, `<=`, `==`, `!=`</td>
+                            </tr>
+                            <tr>
+                                <td>منطقية</td>
+                                <td>ربط الشروط (و، أو، ليس)</td>
+                                <td>`And`, `Or`, `Not`</td>
+                                <td>`&&`, `||`, `!`</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="comparison-card" id="flowcharts-elements">
+                    <h3>عناصر خرائط التدفق</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>الشكل</th>
+                                <th>الوظيفة</th>
+                                <th>وصف</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>بيضاوي (Oval)</td>
+                                <td>البداية/النهاية</td>
+                                <td>يشير إلى بداية أو نهاية البرنامج/الخوارزمية.</td>
+                            </tr>
+                            <tr>
+                                <td>متوازي الأضلاع (Parallelogram)</td>
+                                <td>إدخال/إخراج</td>
+                                <td>يمثل عملية إدخال بيانات (Input) أو إخراج بيانات (Output).</td>
+                            </tr>
+                            <tr>
+                                <td>مستطيل (Rectangle)</td>
+                                <td>معالجة/عملية</td>
+                                <td>يمثل عملية حسابية أو معالجة للبيانات.</td>
+                            </tr>
+                            <tr>
+                                <td>معين (Diamond)</td>
+                                <td>قرار/شرط</td>
+                                <td>يمثل نقطة اتخاذ قرار بناءً على شرط (عادة ما يكون له مساران: نعم/لا أو صحيح/خطأ).</td>
+                            </tr>
+                            <tr>
+                                <td>سهم (Arrow)</td>
+                                <td>تدفق (Flowline)</td>
+                                <td>يوضح اتجاه تدفق البرنامج من خطوة إلى أخرى.</td>
+                            </tr>
+                            <tr>
+                                <td>دائرة (Circle)</td>
+                                <td>نقطة اتصال (Connector)</td>
+                                <td>تستخدم لربط أجزاء مختلفة من خريطة التدفق، خاصة عند الانتقال بين الصفحات.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="comparison-card" id="control-properties">
+                    <h3>خصائص أدوات التحكم الشائعة (VB.NET)</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>الخاصية</th>
+                                <th>الوصف</th>
+                                <th>أمثلة على الاستخدام</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Text</td>
+                                <td>تحديد أو قراءة النص المعروض على العنصر (Button, Label, TextBox).</td>
+                                <td>`Button1.Text = "Click Me"`</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>اسم فريد يستخدم للوصول إلى العنصر في الكود.</td>
+                                <td>`Dim btn As Button = Me.Button1`</td>
+                            </tr>
+                            <tr>
+                                <td>Enabled</td>
+                                <td>تحديد ما إذا كان العنصر نشطًا وقابلاً للتفاعل (True/False).</td>
+                                <td>`TextBox1.Enabled = False`</td>
+                            </tr>
+                            <tr>
+                                <td>Visible</td>
+                                <td>تحديد ما إذا كان العنصر مرئيًا على النموذج (True/False).</td>
+                                <td>`Label1.Visible = False`</td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td>موقع العنصر على النموذج (إحداثيات X, Y).</td>
+                                <td>`Button1.Location = New Point(10, 20)`</td>
+                            </tr>
+                            <tr>
+                                <td>Size</td>
+                                <td>حجم العنصر (العرض والارتفاع).</td>
+                                <td>`TextBox1.Size = New Size(200, 30)`</td>
+                            </tr>
+                            <tr>
+                                <td>BackColor</td>
+                                <td>لون خلفية العنصر.</td>
+                                <td>`Label1.BackColor = Color.Blue`</td>
+                            </tr>
+                            <tr>
+                                <td>ForeColor</td>
+                                <td>لون النص الأمامي للعنصر.</td>
+                                <td>`TextBox1.ForeColor = Color.Red`</td>
+                            </tr>
+                            <tr>
+                                <td>Font</td>
+                                <td>خصائص الخط (الحجم، النوع، النمط).</td>
+                                <td>`Label1.Font = New Font("Arial", 12, FontStyle.Bold)`</td>
+                            </tr>
+                            <tr>
+                                <td>Checked</td>
+                                <td>خاصية منطقية لـ CheckBox و RadioButton (True إذا تم تحديده).</td>
+                                <td>`If CheckBox1.Checked Then ...`</td>
+                            </tr>
+                            <tr>
+                                <td>Items</td>
+                                <td>مجموعة العناصر في ListBox أو ComboBox.</td>
+                                <td>`ListBox1.Items.Add("New Item")`</td>
+                            </tr>
+                            <tr>
+                                <td>SelectedValue / SelectedItem</td>
+                                <td>القيمة أو العنصر المحدد حاليًا في القوائم.</td>
+                                <td>`Dim sel As String = ComboBox1.SelectedItem.ToString()`</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="comparison-card" id="form-properties">
+                    <h3>خصائص النموذج (Form) في VB.NET</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>الخاصية</th>
+                                <th>الوصف</th>
+                                <th>أمثلة على الاستخدام</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Text</td>
+                                <td>النص الذي يظهر في شريط عنوان النموذج.</td>
+                                <td>`Me.Text = "تطبيق جديد"`</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>اسم الكائن للنموذج (يستخدم في الكود).</td>
+                                <td>`Dim myForm As New Form1()`</td>
+                            </tr>
+                            <tr>
+                                <td>BackColor</td>
+                                <td>لون خلفية النموذج.</td>
+                                <td>`Me.BackColor = Color.LightGray`</td>
+                            </tr>
+                            <tr>
+                                <td>BackgroundImage</td>
+                                <td>صورة خلفية للنموذج.</td>
+                                <td>`Me.BackgroundImage = Image.FromFile("bg.jpg")`</td>
+                            </tr>
+                            <tr>
+                                <td>Opacity</td>
+                                <td>شفافية النموذج (من 0.0 إلى 1.0).</td>
+                                <td>`Me.Opacity = 0.8`</td>
+                            </tr>
+                            <tr>
+                                <td>StartPosition</td>
+                                <td>موضع بدء ظهور النموذج عند التشغيل (مثل CenterScreen).</td>
+                                <td>`Me.StartPosition = FormStartPosition.CenterScreen`</td>
+                            </tr>
+                            <tr>
+                                <td>FormBorderStyle</td>
+                                <td>تحديد نوع حدود النموذج (قابلة للتغيير، ثابتة، بدون حدود).</td>
+                                <td>`Me.FormBorderStyle = FormBorderStyle.FixedSingle`</td>
+                            </tr>
+                            <tr>
+                                <td>ShowInTaskbar</td>
+                                <td>تحديد ما إذا كان النموذج يظهر في شريط المهام (True/False).</td>
+                                <td>`Me.ShowInTaskbar = False`</td>
+                            </tr>
+                            <tr>
+                                <td>ControlBox</td>
+                                <td>تحديد ما إذا كانت أزرار التحكم (إغلاق، تكبير، تصغير) تظهر (True/False).</td>
+                                <td>`Me.ControlBox = False`</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 مقدمة في البرمجة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+</body>
+</html>
