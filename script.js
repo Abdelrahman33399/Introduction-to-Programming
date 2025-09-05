@@ -553,9 +553,28 @@ document.addEventListener('DOMContentLoaded', () => {
     questionCard.style.display = 'none'; // Hide the question card until quiz starts
 
 });
-
 // === إدارة البنر الثاني (نسخة طبق الأصل من الأول) ===
 document.addEventListener('DOMContentLoaded', () => {
+    // Dropdown functionality for navigation
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            const dropdownMenu = dropdownToggle.nextElementSibling;
+            if (dropdownMenu && dropdownMenu.classList.contains('dropdown')) {
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (e) => {
+            if (!dropdownToggle.contains(e.target) && !e.target.closest('.dropdown')) {
+                const dropdownMenu = dropdownToggle.nextElementSibling;
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = 'none';
+                }
+            }
+        });
+    }
     // Quiz Data للبنر الثاني
     const questions2 = [
         // أضف أسئلتك هنا (مثال)
@@ -1900,3 +1919,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (quizResultsElem2) quizResultsElem2.style.display = 'none';
     if (questionCard2) questionCard2.style.display = 'none';
 });
+
