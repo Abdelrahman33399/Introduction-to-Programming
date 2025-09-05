@@ -148,8 +148,43 @@
             <p>&copy; 2024 مقدمة في البرمجة. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
+    <script>
+    const secretPassword = "pro304420"; // 
+
+    function unlockSite() {
+        const pass = document.getElementById("password-input").value;
+        const errorMsg = document.getElementById("error-msg");
+
+        if (pass === secretPassword) {
+            // ✅ إخفاء البوب أب — يقدر يشوف الموقع كله
+            document.getElementById("password-popup").style.display = "none";
+            // لو عندك حاجة مخباها، تقدر تظهرها هنا
+        } else {
+            // ❌ كلمة غلط
+            errorMsg.textContent = "كلمة المرور غير صحيحة!";
+            document.getElementById("password-input").value = "";
+            document.getElementById("password-input").focus();
+        }
+    }
+
+    // لما يضغط على الزر
+    document.getElementById("enter-btn").addEventListener("click", unlockSite);
+
+    // لما يضغط Enter من الكيبورد
+    document.getElementById("password-input").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            unlockSite();
+        }
+    });
+
+    // تلقائي يركز على حقل كلمة المرور لما الصفحة تفتح
+    window.onload = function() {
+        document.getElementById("password-input").focus();
+    };
+</script>
 </body>
 
 </html>
+
 
 
