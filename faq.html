@@ -37,43 +37,86 @@
         </div>
     </nav>
 
-    <main class="content-section quiz-section">
-        <div class="container">
-            <div class="card">
-                <h2>اختبر معلوماتك في البرمجة</h2>
-                <p>أجب عن الأسئلة التالية لاختبار فهمك للمفاهيم الأساسية في البرمجة.</p>
-                <button class="download-btn" id="startQuizBtn">ابدأ الاختبار</button>
-            </div>
-
-            <div id="quiz-container" style="display: none;">
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-
-                <div id="question-card" class="quiz-card">
-                    <p class="quiz-question" id="currentQuestion"></p>
-                    <ul class="quiz-options" id="quizOptions">
-                        </ul>
-                    <div class="feedback-message" id="feedbackMessage"></div>
-                    <div class="explanation-text" id="explanationText" style="display:none;"></div>
-                </div>
-
-                <div class="quiz-navigation-buttons">
-                    <button id="nextQuestionBtn" disabled>السؤال التالي</button>
-                </div>
-            </div>
-
-            <div id="quiz-results" class="quiz-results" style="display: none;">
-                <h2>نتائج الاختبار</h2>
-                <p>لقد أجبت على <span id="scoreDisplay"></span> سؤالًا صحيحًا من أصل <span id="totalQuestionsDisplay"></span> سؤال.</p>
-                <div class="review-answers" id="reviewAnswers">
-                    <h3>مراجعة الإجابات:</h3>
-                    </div>
-                <button class="download-btn" id="retakeQuizBtn" style="margin-top: 20px;">إعادة الاختبار</button>
-            </div>
-
+   <!-- الاختبار الأول -->
+<main class="content-section quiz-section">
+    <div class="container">
+        <!-- البنر الأول -->
+        <div class="card">
+            <h2>اختبر معلوماتك في البرمجة</h2>
+            <p>أجب عن الأسئلة التالية لاختبار فهمك للمفاهيم الأساسية في البرمجة.</p>
+            <button class="download-btn" id="startQuizBtn">ابدأ الاختبار</button>
         </div>
-    </main>
+
+        <!-- حاوية الأسئلة الأولى -->
+        <div id="quiz-container" style="display: none;">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div id="question-card" class="quiz-card">
+                <p class="quiz-question" id="currentQuestion"></p>
+                <ul class="quiz-options" id="quizOptions"></ul>
+                <div class="feedback-message" id="feedbackMessage"></div>
+                <div class="explanation-text" id="explanationText" style="display:none;"></div>
+            </div>
+
+            <div class="quiz-navigation-buttons">
+                <button id="nextQuestionBtn" disabled>السؤال التالي</button>
+            </div>
+        </div>
+
+        <!-- نتائج الاختبار الأول -->
+        <div id="quiz-results" class="quiz-results" style="display: none;">
+            <h2>نتائج الاختبار</h2>
+            <p>لقد أجبت على <span id="scoreDisplay"></span> سؤالًا صحيحًا من أصل <span id="totalQuestionsDisplay"></span> سؤال.</p>
+            <div class="review-answers" id="reviewAnswers">
+                <h3>مراجعة الإجابات:</h3>
+            </div>
+            <button class="download-btn" id="retakeQuizBtn" style="margin-top: 20px;">إعادة الاختبار</button>
+        </div>
+    </div>
+</main>
+
+<!-- الاختبار الثاني -->
+<main class="content-section quiz-section">
+    <div class="container">
+        <!-- البنر الثاني -->
+        <div class="card">
+            <h2>اختبار الفصل 3,4 في البرمجة</h2>
+            <p>أجب عن الأسئلة التالية لتقييم فهمك للمفاهيم المتقدمة في البرمجة.</p>
+            <button class="download-btn" id="startQuizBtn2">ابدأ الاختبار</button>
+        </div>
+
+        <!-- حاوية الأسئلة الثانية -->
+        <div id="quiz-container2" style="display: none;">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar2"></div>
+            </div>
+
+            <div id="question-card2" class="quiz-card">
+                <p class="quiz-question" id="currentQuestion2"></p>
+                <ul class="quiz-options" id="quizOptions2"></ul>
+                <div class="feedback-message" id="feedbackMessage2"></div>
+                <div class="explanation-text" id="explanationText2" style="display:none;"></div>
+            </div>
+
+            <div class="quiz-navigation-buttons">
+                <button id="nextQuestionBtn2" disabled>السؤال التالي</button>
+            </div>
+        </div>
+
+        <!-- نتائج الاختبار الثاني -->
+        <div id="quiz-results2" class="quiz-results" style="display: none;">
+            <h2>نتائج الاختبار</h2>
+            <p>لقد أجبت على <span id="scoreDisplay2"></span> سؤالًا صحيحًا من أصل <span id="totalQuestionsDisplay2"></span> سؤال.</p>
+            <div class="review-answers" id="reviewAnswers2">
+                <h3>مراجعة الإجابات:</h3>
+            </div>
+            <button class="download-btn" id="retakeQuizBtn2" style="margin-top: 20px;">إعادة الاختبار</button>
+        </div>
+    </div>
+</main>
+    
 
     <footer>
         <div class="container">
