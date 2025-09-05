@@ -7,6 +7,74 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://img.icons8.com/ios-filled/50/00FFFF/code.png" type="image/x-icon">
 </head>
+    <style>
+    #password-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        backdrop-filter: blur(3px);
+    }
+
+    .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .popup-content h3 {
+        margin: 0 0 20px;
+        color: #333;
+    }
+
+    #password-input {
+        width: 100%;
+        padding: 12px;
+        margin: 15px 0;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 18px;
+        text-align: center;
+        direction: ltr;
+    }
+
+    #password-input:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    #enter-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #enter-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .error-msg {
+        color: #e74c3c;
+        margin: 15px 0;
+        font-weight: bold;
+        min-height: 24px;
+    }
+</style>
 <body>
     <div id="password-popup">
     <div class="popup-content">
@@ -83,4 +151,5 @@
 </body>
 
 </html>
+
 
