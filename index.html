@@ -7,106 +7,116 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://img.icons8.com/ios-filled/50/00FFFF/code.png" type="image/x-icon">
 </head>
-    <style>
+  <style>
     #password-popup {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        background-size: 200% 200%;
-        animation: gradientBG 8s ease infinite;
+        background: rgba(255, 255, 255, 0.15); /* شفافية خفيفة */
+        backdrop-filter: blur(12px); /* تأثير الزجاج الحقيقي */
+        -webkit-backdrop-filter: blur(12px); /* للتوافق مع Safari */
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 99999;
-        backdrop-filter: blur(5px);
+        animation: fadeIn 0.6s ease-out;
     }
 
-    @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 
     .popup-content {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.25); /* زجاجي شفاف */
         padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3); /* إطار زجاجي */
         text-align: center;
         width: 90%;
         max-width: 420px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(16px); /* ضبابية داخلية */
+        -webkit-backdrop-filter: blur(16px);
         transform: scale(1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .popup-content:hover {
         transform: scale(1.02);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 12px 40px rgba(31, 38, 135, 0.3);
     }
 
     .popup-content h3 {
         margin: 0 0 25px;
-        color: #2c3e50;
+        color: #ffffff; /* أبيض عشان يبان على الخلفية الشفافة */
         font-size: 28px;
         font-weight: 800;
         letter-spacing: 0.5px;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
     }
 
     .popup-content p {
-        color: #555;
+        color: rgba(255, 255, 255, 0.9); /* أبيض شبه شفاف */
         margin-bottom: 25px;
         font-size: 16px;
         line-height: 1.6;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     }
 
     #password-input {
         width: 100%;
         padding: 16px;
         margin: 20px 0;
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 14px;
         font-size: 18px;
         text-align: center;
         font-weight: 500;
-        color: #2c3e50;
-        background: #fafafa;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.15); /* شفاف خفيف */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         transition: all 0.3s ease;
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    #password-input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
     }
 
     #password-input:focus {
         outline: none;
-        border-color: #6c5ce7;
-        background: #fff;
-        box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        border-color: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
         transform: translateY(-2px);
     }
 
     #enter-btn {
-        background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-        color: white;
-        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
         padding: 16px 40px;
         border-radius: 50px;
         cursor: pointer;
         font-size: 18px;
         font-weight: 700;
         letter-spacing: 0.8px;
-        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        backdrop-filter: blur(4px);
         transition: all 0.3s ease;
         text-transform: uppercase;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     #enter-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(108, 92, 231, 0.6);
-        background: linear-gradient(135deg, #560bad, #8e44ad);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.7);
     }
 
     #enter-btn:active {
@@ -114,25 +124,27 @@
     }
 
     .error-msg {
-        color: #e74c3c;
+        color: #ff6b6b; /* أحمر فاتح يبان على الخلفية */
         margin: 20px 0 10px;
         font-weight: 700;
         font-size: 16px;
         min-height: 24px;
         animation: shake 0.5s ease-in-out;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     @keyframes shake {
         0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-5px); }
-        75% { transform: translateX(5px); }
+        25% { transform: translateX(-6px); }
+        75% { transform: translateX(6px); }
     }
 
-    /* Responsive للهواتف الصغيرة */
+    /* Responsive للهواتف */
     @media (max-width: 480px) {
         .popup-content {
             padding: 30px 20px;
-            margin: 10px;
+            margin: 15px;
+            border-radius: 20px;
         }
         .popup-content h3 {
             font-size: 24px;
@@ -257,6 +269,7 @@
 </body>
 
 </html>
+
 
 
 
